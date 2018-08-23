@@ -1,0 +1,27 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "buunguyenlam",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenlambuu/natours.git"
+  },
+  "keywords": [
+    "frontend",
+    "sass",
+    "responsive"
+  ],
+  "bugs": {
+    "url": "https://github.com/nguyenlambuu/natours/issues"
+  },
+  "homepage": "https://github.com/nguyenlambuu/natours#readme"
+}
