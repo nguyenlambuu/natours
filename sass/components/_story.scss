@@ -14,6 +14,16 @@ Story
     transform: skewX(-12deg);
 
 
+	@include respond(tab-port){
+		width: 100%;
+		padding: 4rem;
+		padding-left: 7rem;
+	}
+
+	@include respond(phone){
+		transform: skewX(0);
+	}
+
 	&__shape {
         position: relative;
 		width: 15rem;
@@ -49,10 +59,24 @@ Story
 
         /* shape-outside define where the content float around the element */
         
-        transform: translateX(-3rem) skewX(12deg);
+		transform: translateX(-3rem) skewX(12deg);
+		
+		@include respond(phone){
+			width: 10rem;
+			height: 10rem;
+			transform: translateX(-1.75rem) skewX(0);
+		}
     }
 
-    &__text {transform: skewX(12deg);}
+    &__text {
+		transform: skewX(12deg);
+		
+
+		@include respond(phone){
+			transform: skewX(0);
+		}
+
+	}
     
     &__img{
         height: 100%;

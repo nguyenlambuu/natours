@@ -16,3 +16,46 @@ Mixins
 	left:50%;
 	transform: translate(-50%, -50%);
 }
+
+/* -----
+MEDIA QUERY MANAGER
+
+0 - 600px: 		PHONE 				---> 37.5em
+600 - 900px: 	TABLET PORTRAIT		---> 56.25em
+900 - 1200px: 	TABLET LANDSCAPE 	---> 75em
+[1200 - 1800px] is where our normal styles apply
+1800+ px:		BIG DESKTOP 		---> 112.5em
+----- */
+
+// @mixin resphone-phone {
+// 	@media (max-width: 600px) {@content};
+// }
+/* -----
+$breakpoint ARGUMENT CHOICES:
+
+- phone: 		PHONE
+- tab-port: 	TABLET PORTRAIT
+- tab-land: 	TABLET LANDSCAPE
+- big-desktop:	BIG DESKTOP
+
+ORDER: 
+	1. BASE + TYPOGRAPHY
+	2. GENERAL LAYOUT + GRID
+	3. PAGE LAYOUT
+	4. COMPONENTS
+----- */
+
+@mixin respond ($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 37.5em) {@content}; // 600px
+	}
+	@if $breakpoint == tab-port {
+		@media (max-width: 56.25em) {@content}; // 900px
+	}
+	@if $breakpoint == tab-land {
+		@media (max-width: 75em) {@content}; // 1200px
+	}
+	@if $breakpoint == big-desktop {
+		@media (min-width: 112.5em) {@content}; // 1800px
+	}
+}

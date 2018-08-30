@@ -31,7 +31,12 @@ Form
 
 		&::-webkit-input-placeholder {
 			color: $color-grey-dark-2;
-		}
+        }
+        
+        @include respond(tab-port){
+            width: 100%;
+        }
+
 	}
 
 	&__label {
@@ -46,7 +51,12 @@ Form
 	&__input:placeholder-shown + &__label {
 		opacity: 0;
 		visibility: hidden;
-		transform: translateY(-4rem);
+        transform: translateY(-4rem);
+        
+        @include respond(tab-port){
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
     
     &__radio-group {
@@ -61,6 +71,10 @@ Form
         cursor: pointer;
         position: relative;
         padding-left: 5rem;
+
+        @include respond(tab-port){
+            padding-left: 4rem;
+        }
     }
 
     &__radio-button {
